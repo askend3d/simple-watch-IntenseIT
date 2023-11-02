@@ -1,0 +1,100 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #004643;
+}
+
+.clock {
+    width: 400px;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url(https://user-images.githubusercontent.com/42720361/80282419-a293a400-8711-11ea-81c7-1c44e2980db2.png);
+    background-size: cover;
+    border: 15px solid #001e1d;
+    border-radius: 50%;
+    box-shadow: 0 -50px 50px rgba(255,255,255,0.05),
+                inset 0 -50px 50px rgba(255,255,255,0.05),
+                0 50px 50px rgba(0,0,0,0.3),
+                inset 0 50px 50px rgba(0,0,0,0.3);
+}
+
+.clock::before {
+    content: "";
+    width: 20px;
+    height: 20px;
+    background: #abd1c6;
+    border-radius: 50%;
+    z-index: 10000;
+}
+
+
+.clock .hour,
+.clock .min,
+.clock .sec {
+    position: absolute;
+}
+
+
+
+.hr, .mn, .sc {
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+    position: absolute;
+    border-radius: 50%;
+}
+
+.clock .hour, .hr {
+    width: 200px;
+    height: 200px;
+}
+
+.clock .min, .mn {
+    width: 250px;
+    height: 250px;
+}
+
+.clock .sec, .sc {
+    width: 300px;
+    height: 300px;
+}
+
+.hr:before {
+  content: '';
+    position: absolute;
+    width: 8px;
+    height: 100px;
+    background: #e16162;
+    z-index: 10;
+    border-radius: 6px 6px 0 0;
+}
+
+.mn:before {
+    content: '';
+    position: absolute;
+    width: 6px;
+    height: 120px;
+    background: #0d0d0d;
+    z-index: 11;
+    border-radius: 6px 6px 0 0;
+}
+
+.sc:before {
+    content: '';
+    position: absolute;
+    width: 3px;
+    height: 150px;
+    background: #001e1d;
+    z-index: 12;
+    border-radius: 6px 6px 0 0;
+}
