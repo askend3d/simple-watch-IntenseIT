@@ -18,7 +18,7 @@ setInterval(() => {
     hr.style.transform = `rotateZ(${hh + (mm/12)}deg)`;
     mn.style.transform = `rotateZ(${mm}deg)`;
     sc.style.transform = `rotateZ(${ss}deg)`;
-    dt.innerHTML = `${day}.${month}`
+    dt.innerHTML = `${day}.${month+1}`
 }, 1000);   
 
 
