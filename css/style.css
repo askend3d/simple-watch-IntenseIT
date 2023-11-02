@@ -55,8 +55,8 @@ body {
 }
 
 .clock .hour, .hr {
-    width: 200px;
-    height: 200px;
+    width: 190px;
+    height: 190px;
 }
 
 .clock .min, .mn {
@@ -73,7 +73,7 @@ body {
   content: '';
     position: absolute;
     width: 8px;
-    height: 100px;
+    height: 90px;
     background: #e16162;
     z-index: 10;
     border-radius: 6px 6px 0 0;
@@ -97,4 +97,24 @@ body {
     background: #001e1d;
     z-index: 12;
     border-radius: 6px 6px 0 0;
+}
+
+
+.date {
+    font-size: 24px;
+    color: #abd1c6;
+    border: 2px solid #001e1d;
+    box-shadow: 0 -5px 5px rgba(255,255,255,0.05),
+                inset 0 -5px 5px rgba(255,255,255,0.05),
+                0 5px 5px rgba(0,0,0,0.3),
+                inset 0 5px 5px rgba(0,0,0,0.3);
+    text-align: center;
+    border-radius: 20%;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    box-sizing:border-box;
+    margin-top: 100px;
+    padding: 1px 5px 1px 5px;
+    z-index: -100;
+    border-collapse: collapse;
+    position: absolute;
 }

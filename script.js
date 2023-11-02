@@ -3,19 +3,25 @@ const deg = 6;
 const hr = document.querySelector(".hr");
 const mn = document.querySelector(".mn");
 const sc = document.querySelector(".sc");
+const dt = document.querySelector(".dt")
 
 setInterval(() => {
-    let day = new Date();
+    let currentDate = new Date();
 
-    let hh = day.getHours() * 30;
-    let mm = day.getMinutes() * deg;
-    let ss = day.getSeconds() * deg;
+    let hh = currentDate.getHours() * 30;
+    let mm = currentDate.getMinutes() * deg;
+    let ss = currentDate.getSeconds() * deg;
+    let day = currentDate.getDate();
+    let month = currentDate.getMonth();
 
+    
     hr.style.transform = `rotateZ(${hh + (mm/12)}deg)`;
     mn.style.transform = `rotateZ(${mm}deg)`;
     sc.style.transform = `rotateZ(${ss}deg)`;
+    dt.innerHTML = `${day}.${month}`
 }, 1000);   
 
-const array = new Array(3).fill([])
-array[0].push("bytes") 
-console.log(array)
+
+
+
+console.log(new Date().getDate()) 
