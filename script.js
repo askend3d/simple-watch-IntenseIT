@@ -1,28 +1,26 @@
 const deg = 6;
 
-const hr = document.querySelector(".hr");
-const mn = document.querySelector(".mn");
-const sc = document.querySelector(".sc");
-const dt = document.querySelector(".dt")
+const clock = document.querySelector(".clock");
 
-setInterval(() => {
-    let currentDate = new Date();
+const hr = clock.children[0];
+const mn = clock.children[1];
+const sc = clock.children[2];
 
-    let hh = currentDate.getHours() * 30;
-    let mm = currentDate.getMinutes() * deg;
-    let ss = currentDate.getSeconds() * deg;
-    let day = currentDate.getDate();
-    let month = currentDate.getMonth();
+const dt = document.querySelector(".dt");
 
+function updateTimer() {
+    const currentDate = new Date();
+
+    const hh = currentDate.getHours() * 30;
+    const mm = currentDate.getMinutes() * deg;
+    const ss = currentDate.getSeconds() * deg;
     
     hr.style.transform = `rotateZ(${hh + (mm/12)}deg)`;
     mn.style.transform = `rotateZ(${mm}deg)`;
     sc.style.transform = `rotateZ(${ss}deg)`;
-    if (day < 10) dt.innerHTML = `${"0" + day}.${month+1}`
-    else dt.innerHTML = `${day}.${month+1}`
-}, 1000);   
 
+    dt.innerHTML = currentDate.toLocaleDateString('default', {month: "numeric", day: "numeric"})
+}
 
-
-
-console.log(new Date().getDate()) 
+setInterval(() => updateTimer(), 1000);   
+updateTimer()
